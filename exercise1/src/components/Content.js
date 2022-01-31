@@ -25,7 +25,7 @@ export default function Content() {
 }
 
 const Trending = (props) => {
-    if(props.heading == "MAINOS"){
+    if(props.heading === "MAINOS"){
         return(<div className="trending ad"><b>{props.heading}:</b> {props.desc}</div>)
     }
     else{
@@ -128,27 +128,55 @@ const CorornaStatistic = () => {
 
 const MostReaded = () => {
     var id = 0;
+    const mostReadedContent = [
+        {
+            heading: "Rikosepäillyt",
+            desc: "Huijau mikä huijau"
+        },
+        {
+            heading: "HS Vantaa",
+            desc: "qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty"
+        },
+        {
+            heading: "Päivittyvä seuranta",
+            desc: "qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty"
+        },
+        {
+            heading: "Nyt.fi",
+            desc: "qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty"
+        },
+        {
+            heading: "Rikosepäillyt",
+            desc: "qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty"
+        },
+        {
+            heading: "Helsinki",
+            desc: "qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty"
+        },
+        {
+            heading: "Lifestyle",
+            desc: 'Asiantuntija neuvoo:"Jos ei jaksa niin kottakaa vaan jaksaa' 
+        }
+    ];
 
     const MostReadedContent = (props) => {
-        id++;
         return(
-            <li>
-                <h1 className="heading mostId">{id}</h1>
-                <p className="margin0"><b>{props.heading} | </b>{props.desc}</p>
-            </li>
+            props.content.map((item)=>{
+                id++;
+                return(
+                    <li>
+                        <h1 className="heading mostId" key={item}>{id}</h1>
+                        <p className="margin0"><b>{item.heading} | </b>{item.desc}</p>
+                    </li>
+                )
+            })
         )
     }
 
     return(
         <list className="sidePanel">
             <h2 className="heading mostViewed">Luetuimmat</h2>
-            <MostReadedContent heading = "Rikosepäillyt" desc = "Huijau mikä huijau"/>
-            <MostReadedContent heading = "HS Vantaa" desc = "qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty"/>
-            <MostReadedContent heading = "Päivittyvä seuranta" desc = "qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty"/>
-            <MostReadedContent heading = "Nyt.fi" desc = "qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty"/>
-            <MostReadedContent heading = "Rikosepäillyt" desc = "qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty"/>
-            <MostReadedContent heading = "Helsinki" desc = "qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty qwerty"/>
-            <MostReadedContent heading = "Lifestyle" desc = 'Asiantuntija neuvoo:"Jos ei jaksa niin kottakaa vaan jaksaa'/>
+            <MostReadedContent content = {mostReadedContent}/>
         </list>
     )
 }
