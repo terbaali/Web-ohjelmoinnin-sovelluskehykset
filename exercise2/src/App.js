@@ -1,32 +1,29 @@
 import './App.css';
 import ShoppingListContent from './components/ShoppingListContent';
 import Title from './components/Title';
-import { useState } from 'react';
 import Buttons from './components/Buttons';
+import { useState } from 'react';
+
 
 function App() {
   
   const [ shoppingListItems, setShoppingListItems ] = useState([
     {
-    id: 1, 
       name: 'Milk',
       qty: 5,
       unit: 'ltr',
     },
     { 
-      id: 2,
       name: 'Bananas',
       qty: 6,
       unit: 'pcs'
     },
     { 
-      id: 3,
       name: 'Bread',
       qty: 3,
       unit: 'x'
     },
     { 
-      id: 4,
       name: 'Eggs',
       qty: 16,
       unit: 'x'
@@ -70,7 +67,6 @@ function App() {
     {
       let newElement = [...newShoppingListItems,
       {
-        id: shoppingListItems.length + 1,
         name: itemsToAddToSoppingList[item].name,
         qty: getRandomQty(),
         unit: itemsToAddToSoppingList[item].unit
