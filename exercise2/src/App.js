@@ -54,7 +54,7 @@ function App() {
     return Math.floor(Math.random() * maxRandomQuantity + 1);
   }
 
-  const handleItemChekkedToggle = (item) => {
+  const handleItemAddEvent = (item) => {
     let newShoppingListItems = [...shoppingListItems];
     let itemClickedIndex = newShoppingListItems.findIndex(i => itemsToAddToSoppingList[item].name === i.name)
 
@@ -63,8 +63,7 @@ function App() {
       newElement.qty += getRandomQty();
       newShoppingListItems[itemClickedIndex] = newElement;
     }
-    else
-    {
+    else{
       let newElement = [...newShoppingListItems,
       {
         name: itemsToAddToSoppingList[item].name,
@@ -77,10 +76,10 @@ function App() {
   }
 
   return (
-    <div className="borders5W00">
+    <div className="bordersW500">
       <Title/>
       <ShoppingListContent propsi={ shoppingListItems }/>
-      <Buttons itemsToAdd={ itemsToAddToSoppingList } addItemClickedEvent={ handleItemChekkedToggle }/>
+      <Buttons itemsToAdd={ itemsToAddToSoppingList } addItemClickedEvent={ handleItemAddEvent }/>
     </div>
   )
 }
