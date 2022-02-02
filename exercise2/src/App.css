@@ -1,0 +1,47 @@
+.bigTitle{
+    color: black;
+    font-size: 50px;
+}
+
+.smallerHeading{
+    color:darkgrey;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.yellowBG{
+    background-color: yellow;
+}
+
+.marginL30{
+    margin-left:20px;
+}
+
+.pinkBG{
+    background-color: pink;
+}
+
+.isChekked{
+    text-decoration: line-through;
+}
+
+.noMarkers{
+    list-style-type: none;
+}
+
+.borders5W00{
+    border: 2px solid black;
+    width:500px;
+}
+
+.marginB2{
+    margin-bottom:3px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+pre{
+    margin:0%
+}
