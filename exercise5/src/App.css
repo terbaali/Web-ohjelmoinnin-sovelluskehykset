@@ -168,12 +168,6 @@ h4{
     transition-duration: 0.4s;
 }
 
-.productInfoContainer:hover{
-    border: solid 5px rgb(103, 145, 153);
-    border-radius: 20px;
-    margin: -5px;
-}
-
 .productImg{
     height: 250px;
     max-height: 250px;
